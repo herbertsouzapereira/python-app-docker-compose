@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t devopscloudbootcamp/myJenkinsFlaskApp:$BUILD_NUMBER .'
+                sh 'docker build -t devopscloudbootcamp/myjenkinsflaskapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push devopscloudbootcamp/myJenkinsFlaskApp:$BUILD_NUMBER'
+                sh 'docker push devopscloudbootcamp/myjenkinsflaskapp:$BUILD_NUMBER'
             }
         }
 }
